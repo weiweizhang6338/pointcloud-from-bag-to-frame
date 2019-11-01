@@ -1,0 +1,16 @@
+<launch>
+
+    <arg name="in_cloud_topic" default="/pandar40p" />
+    <arg name="out_file_dir" default="/home/wei-zhang/bag_files/ivfc2019/pandar/"/>
+    <node pkg="pointcloud_from_bag_to_frame" 
+          type="pointcloud_from_bag_to_frame_node" 
+          name="pointcloud_from_bag_to_frame_node" 
+          output="screen">
+        <param name="in_cloud_topic" type="str" value="$(arg in_cloud_topic)" />
+        <param name="out_file_dir" type="str" value="$(arg out_file_dir)" />
+        <param name="out_file_interval" type="int" value="1" />
+        <param name="out_file_type" type="int" value="0" />
+        <param name="out_point_type" type="int" value="0" />
+
+    </node>
+</launch>
